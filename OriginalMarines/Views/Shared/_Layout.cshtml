@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Navigation.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="~/image/icon.png">
+
+</head>
+<body id="load">
+    <header class="d-none d-lg-block" style="position:absolute;top:0;width:100%;z-index:1000000">
+        <div class="container-fluid " >
+            <div class="row ">
+                <div class="col-12  d-flex top-bar" style="background-color:rgba(255, 255, 255, 0.9)">
+                    <p>Welcome To Orignal Marines Outlet</p>
+                    <p>
+                        <span class="las la-sign-out-alt"></span>
+                        <a href="@Url.Action("checkout","Home")">Checkout</a>
+                    </p>
+                    <p>
+                        <i class="las la-user"></i>
+                        <a href="@Url.Action("Index","Auth")"> Login | Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid  bg-nav" style="height:150px;">
+            <div class="row justify-content-around" id="topbar">
+                <div class="col-3 m-auto text-center">
+                    <img src="https://originalmarinesoutlets.com/client/dist/images/logo/desktop-home.png" class="logo" alt="logo" />
+                </div>
+                <div class="col-6 m-auto text-center div-form p-0">
+                    <form class="d-inline-flex w-100 ">
+                        <input type="text" class="input-group text-white" placeholder="Search your item here" name="query" />
+                        <select class="form-select">
+                            <option value="*">All Category</option>
+                            <option value="1">Boys</option>
+                            <option value="2">Girls</option>
+                            <option value="3">Baby Boys</option>
+                            <option value="4">Baby Girls</option>
+                            <option value="5">NewBorn</option>
+                            <option value="6">Om Shoes</option>
+                        </select>
+                        <button class="btn btn-primary btn-search">
+                            <i class="las la-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-3 d-inline-flex justify-content-center">
+                    <div class="dropdown mx-3 m-auto">
+                        <button class="btn dropdown-toggle d-flex text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <h2>
+                                <i class="las la-user"></i>
+                            </h2>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">Welcome</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("cart","Home")">My Cart</a>
+                            <a class="dropdown-item" href="@Url.Action("whishlist","Home")">My Wishlist</a>
+                            <a class="dropdown-item" href="@Url.Action("checkout","Home")">Checkout</a>
+                            <a class="dropdown-item" href="@Url.Action("Index","Auth")">Login</a>
+
+
+                        </div>
+                    </div>
+                    <div class="mx-3 m-auto">
+                        <h2>
+                            <a href="@Url.Action("cart","Home")" class="text-white position-relative">
+                                <i class="las la-shopping-bag"></i>
+                                <span class="badgeround bg-danger">10</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="mx-3 m-auto">
+                        <h2>
+                            <a href="@Url.Action("whishlist","Home")" class="text-white position-relative">
+                                <i class="lar la-heart"></i>
+                                <span class="badgeround bg-danger">10+</span>
+
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row w-100 m-0" id="nav" style="left:0;">
+                <nav>
+                    <ul class="nav justify-content-center " style="position:relative">
+                        <li class="nav-item ">
+                            <a href="@Url.Action("Index","Home")" class="nav-link  @(ViewBag.name == null ? "active" : "")">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("category","Home", new { name="Boy"})"  class="nav-link @(ViewBag.name == "Boy" ? "active" : "")">Boy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("category","Home", new { name="Baby Boy"})"  class="nav-link @(ViewBag.name == "Baby Boy" ? "active" : "")">Baby Boy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("category","Home", new { name="Girl"})"  class="nav-link @(ViewBag.name == "Girl" ? "active" : "")">Girl</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("category","Home", new { name="Baby Girl"})"  class="nav-link @(ViewBag.name == "Baby Girl" ? "active" : "")">Baby Girl</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("category","Home", new { name="NewBorn"})"  class="nav-link @(ViewBag.name == "NewBorn" ? "active" : "")">NewBorn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("category","Home", new { name="OMShoes"})"  class="nav-link @(ViewBag.name == "OMShoes" ? "active" : "")">OM Shoes</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+    <header class="d-block d-lg-none">
+        <div class="container-fluid bg-white">
+            <div class="row position-fixed w-100 bg-primary m-0 p-0" style="top:0;left:0;z-index:100;">
+                <div class="col-4 order-1 position-absolute" style="right:0">
+                    <p>
+                        <i class="las la-user"></i>
+                        <a href="@Url.Action("Index","Auth")"> Login | Register</a>
+                    </p>
+                </div>
+                <div class="col-8 text-start order-0">
+                    <button class="navbar-toggler collapsed" id="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav mr-auto  ">
+                        <li class="nav-item active text-center">
+                            <a href="@Url.Action("Index","Home")" class="nav-link  @(ViewBag.name == null ? "active" : "")">Home</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a href="@Url.Action("category","Home", new { name="Boy"})" class="nav-link @(ViewBag.name == "Boy" ? "active" : "")">Boy</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a href="@Url.Action("category","Home", new { name="Baby Boy"})" class="nav-link @(ViewBag.name == "Baby Boy" ? "active" : "")">Baby Boy</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a href="@Url.Action("category","Home", new { name="Girl"})" class="nav-link @(ViewBag.name == "Girl" ? "active" : "")">Girl</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a href="@Url.Action("category","Home", new { name="Baby Girl"})" class="nav-link @(ViewBag.name == "Baby Girl" ? "active" : "")">Baby Girl</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a href="@Url.Action("category","Home", new { name="NewBorn"})" class="nav-link @(ViewBag.name == "NewBorn" ? "active" : "")">NewBorn</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a href="@Url.Action("category","Home", new { name="OMShoes"})" class="nav-link @(ViewBag.name == "OMShoes" ? "active" : "")">OM Shoes</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row bg-danger text-white position-relative text-center align-items-center " style="margin-top: 2.4rem;">
+                <span>Items on 60% &amp; 70% cannot be exchanged.</span>
+            </div>
+            <div class="justify-content-center mt-3">
+                <img src="~/image/logo.png" class="img-fluid w-50" alt="logo" />
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 justify-content-center d-inline-flex">
+                    <div class="dropdown mx-3 m-auto ">
+                        <button class="btn dropdown-toggle d-flex text-black" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <h2>
+                                <i class="las la-user "></i>
+                            </h2>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item">Welcome</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("cart","Home")">My Cart</a>
+                            <a class="dropdown-item" href="@Url.Action("whishlist","Home")">My Wishlist</a>
+                            <a class="dropdown-item" href="@Url.Action("checkout","Home")">Checkout</a>
+                            <a class="dropdown-item" href="@Url.Action("Index","Auth")">Login</a>
+
+
+                        </div>
+                    </div>
+                    <div class="mx-3 m-auto">
+                        <h2>
+                            <a href="@Url.Action("cart","Home")" class="text-black position-relative">
+                                <i class="las la-shopping-bag"></i>
+                                <span class="badgeround bg-danger">10</span>
+
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="mx-3 m-auto">
+                        <h2>
+                            <a href="@Url.Action("whishlist","Home")" class="text-black position-relative">
+                                <i class="lar la-heart"></i>
+                                <span class="badgeround bg-danger">10+</span>
+
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-2 justify-content-center">
+                    <form class="d-inline-flex w-100 justify-content-center ">
+                        <input type="text" class="input-group text-black w-75" placeholder="Search your item here" name="query" style="border: 1px solid black;" />
+                        
+                        <button class="btn btn-primary btn-search text-white bg-danger" style="border: 1px solid black!important;border-radius: 0px;">
+                            <i class="las la-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </header>
+    <div class="btn-down" onclick="down()" id="down">
+        <i class="las la-arrow-circle-up"></i>
+    </div>
+
+    @RenderBody()
+
+    <footer class="mt-3 ">
+        <div class="container-fluid">
+            <div class="row text-center justify-content-center align-items-center " style="background-color:#f4f7f9">
+                <div class="col-md-6 col-12 mt-2">
+                    <img src="https://cdn-static.originalmarines.com/pub/static/version1618619551/frontend/Mgs/claue_child/it_IT//images/footer/truck.png" alt="SPEDIZIONE GRATUITA">
+                    <p class="bold-text">FAST DELIVERY</p>
+                </div>
+                <div class="col-md-6 col-12 mt-2">
+                    <img src="https://cdn-static.originalmarines.com/pub/static/version1618619551/frontend/Mgs/claue_child/it_IT//images/footer/secuti.png" alt="Pagamenti sicuri">
+                    <p class="bold-text">CASH ON DELIVERY</p>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-xl-3  col-md-6 col-sm-12 d-flex flex-column text-center">
+                    <h5>SHOP FOR</h5>
+                    <ul class="mt-3 nav d-flex flex-column ">
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2  text-black ">Boy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">Baby Boy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">Girl</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">Baby Girl</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">NewBorn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">OM Shoes</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-xl-3 col-md-6 col-sm-12 mt-sm-3 mt-md-3 mt-0 d-flex flex-column text-center">
+                    <h5>CORPORATE</h5>
+                    <ul class="mt-3 nav d-flex flex-column ">
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2  text-black ">Exchange Policies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">Our Story</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">Lebanon store locations</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-md-6 col-sm-12 mt-sm-3 mt-md-3 mt-0 d-flex flex-column text-center  align-items-center">
+                    <h5>FOLLOW US</h5>
+                    <div class="d-flex flex-row m-3  text-center">
+                        <a href="#" target="_blank">
+                            <span class="lab la-instagram" style="font-size: 43px;"></span>
+                        </a>
+                        <a href="#" target="_blank">
+                            <span class="lab la-facebook-f" style="font-size: 43px;"></span>
+                        </a>
+                        <a href="#" target="_blank">
+                            <span class="lab la-linkedin-in" style="font-size: 43px;"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-sm-12 mt-sm-3 mt-md-3 mt-0 d-flex flex-column text-center  align-items-center">
+                    <h5>CONTACT</h5>
+                    <ul class="mt-3 nav d-flex flex-column ">
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2  text-black ">
+                                <i class="las la-dollar-sign m-2"></i>
+                                Exchange Request
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">
+                                <i class="lar la-envelope m-2"></i>
+                                originalmarinesoutlets@gmail.com
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="position-relative py-2 text-black">
+                                <i class="las la-mobile m-2"></i>
+                                +961-1 283 899
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row text-center align-items-center bg-primary mt-4">
+                <small class="text-white">
+                    Original Marines Outlet © 2021. All Rights Reserved
+                </small>
+            </div>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="~/Scripts/nav.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>

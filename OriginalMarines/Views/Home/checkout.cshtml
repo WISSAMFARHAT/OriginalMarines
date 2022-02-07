@@ -1,0 +1,232 @@
+﻿
+@{
+    ViewBag.Title = "checkout";
+}
+
+
+<div style="height:35vh" class="d-none d-lg-block"></div>
+
+<div class="container mt-5 mt-lg-0">
+    <div class="row">
+        <div class="col-lg-8 col-12 order-1 order-lg-0 mt-lg-0 mt-4">
+
+            <div class="row text-start ">
+                <div class="col-12 d-flex flex-row p-2" style="border-bottom:1px solid #808080">
+                    <h5 id="details-button-navigator" onclick="ToDetail()" class="active-checkout-navigator w-50 p-2">Details</h5>
+                    <h5 id="payment-button-navigator" onclick="ToPayment()" class="w-50 p-2">Payment Method</h5>
+                </div>
+                <form>
+                    <div id="details" class="text-start">
+                        <h5 style="padding: 2% 0;" class="mt-2">Shipment Address</h5>
+                        <div class="row">
+                            <div class="col-lg-6 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="First Name*" />
+                                    <span style="color:red" class="mt-1">This field is required.</span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="Last Name*" />
+                                    <span style="color:red" class="mt-1">This field is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="Company" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="Phone*" />
+                                    <span style="color:red" class="mt-1">This field is required.</span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="Fax" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="Email*" />
+                                    <span style="color:red" class="mt-1">This field is required.</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="BUILDING NAME & MORE DETAILS (FLOOR, APARTMENT, OR OTHER REFERENCES)*" />
+                                    <span style="color:red" class="mt-1">This field is required.</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="Street" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 mt-2">
+                                <div class="text-start">
+                                    <select class="form-select  w-100 text-black" style="border: 1px solid #ced4da">
+                                        <option value="1" selected>Lebanon</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 mt-2">
+                                <div class="text-start">
+                                    <select style="border: 1px solid #ced4da" class="form-select  text-black w-100" id="formShipmentState" name="shipmentState" aria-invalid="false">
+                                        <option value="region-000000001" data-country="country-000000001">Beirut</option>
+                                        <option value="region-000000002" data-country="country-000000001">Akkar</option>
+                                        <option value="region-000000003" data-country="country-000000001">Aley</option>
+                                        <option value="region-000000004" data-country="country-000000001">Baabda</option>
+                                        <option value="region-000000005" data-country="country-000000001">Baalbeck</option>
+                                        <option value="region-000000006" data-country="country-000000001">Bcharee</option>
+                                        <option value="region-000000007" data-country="country-000000001">Bent Jbeil</option>
+                                        <option value="region-000000008" data-country="country-000000001">Chouf</option>
+                                        <option value="region-000000009" data-country="country-000000001">Hasbaya</option>
+                                        <option value="region-000000010" data-country="country-000000001">Hermel</option>
+                                        <option value="region-000000011" data-country="country-000000001">Jbeil</option>
+                                        <option value="region-000000012" data-country="country-000000001">Jezzine</option>
+                                        <option value="region-000000013" data-country="country-000000001">Kesserwan</option>
+                                        <option value="region-000000014" data-country="country-000000001">Koura</option>
+                                        <option value="region-000000015" data-country="country-000000001">Marjayoun</option>
+                                        <option value="region-000000016" data-country="country-000000001">Metn</option>
+                                        <option value="region-000000017" data-country="country-000000001">Minnieh Dennaye</option>
+                                        <option value="region-000000018" data-country="country-000000001">Nabatieh</option>
+                                        <option value="region-000000019" data-country="country-000000001">Rachaya</option>
+                                        <option value="region-000000020" data-country="country-000000001">Saida</option>
+                                        <option value="region-000000021" data-country="country-000000001">Tripoli</option>
+                                        <option value="region-000000022" data-country="country-000000001">Tyre</option>
+                                        <option value="region-000000023" data-country="country-000000001">West Bekaa</option>
+                                        <option value="region-000000024" data-country="country-000000001">Zahle</option>
+                                        <option value="region-000000025" data-country="country-000000001">Zghorta</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="City*" />
+                                    <span style="color:red" class="mt-1">This field is required.</span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 mt-2">
+                                <div class="text-start">
+                                    <input type="text" class="form-control w-100" placeholder="Post Code" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <textarea placeholder="WRITE SOME NOTES" class="form-control" id="formNote" rows="3" autocomplete="off" name="note"></textarea>
+
+                        </div>
+                        <button type="button" class="btn btn-primary w-100 mt-3">Proceed to the payment</button>
+                    </div>
+                    <div id="payment" class="text-start" style="display:none">
+                        <h4 class="paymentTitle mt-2">Payment method</h4>
+                        <div class="paymentType">
+                            <div class="form-check text-start">
+                                <input checked="" class="form-check-input  " type="radio" name="flexRadioDefault" id="formPaymentType">
+                                <label class="form-check-label " for="formPaymentType">
+                                    Cash on delivery
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Place your order</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-lg-4 order-0 order-lg-1 " style="padding-left:44px">
+            <div class="row text-center justify-content-center order-lg-0 order-1" style="background-color:#f0f0f0;padding: 2.5rem 2rem;">
+                <img style="width: 50%;" src="https://storage.googleapis.com/original-marines-outlet/LOGO.png">
+                <input class="mt-3 form-control w-100" type="text" placeholder="Enter your username" />
+                <input class="mt-3 form-control w-100" type="password" placeholder="Enter your password" />
+                <span class="mt-3 text-start" style="color:blue"><a href="#">FORGOT YOUR PASSWORD</a></span>
+                <button class="btn btn-primary text-center w-100 mt-3">SIGN IN</button>
+            </div>
+            <p style="color: blue; font-style: italic;text-align:left" class="mt-4 order-lg-1 order-2">You are saving 325,000 LBP with discounts</p>
+            <div class="row order-0 order-lg-2">
+                <div class="mt-4  " id="checkoutSummary" style="background-color:#f0f0f0;text-align-last: start;">
+                    <div class="col-12 py-3" style="border-bottom:1px solid #D4D4D4">
+                        <h5>
+                            ORDER SUMMARY
+                            <small class="amount">1 item(s)</small>
+                        </h5>
+                    </div>
+                    <div class="col-12 py-3" style="border-bottom:1px solid #D4D4D4">
+                        <h5>
+                            SUBTOTAL
+                            <span class="amount">289,250 LBP</span>
+                        </h5>
+                    </div>
+                    <div class="col-12 py-3" style="border-bottom:1px solid #D4D4D4">
+                        <h6>
+                            SHIPPING[Express Delivery]
+
+                            <span class="amount">30,000 LBP</span>
+                        </h6>
+                    </div>
+                    <div class="col-12 py-3" style="border-bottom:1px solid #D4D4D4">
+                        <h6>
+                            Tax
+                            <span></span>
+                            <span class="amount">35,750 LBP</span>
+                        </h6>
+                    </div>
+                    <div class="col-12 py-3">
+                        <h5>
+                            TOTAL
+                            <span class="amount">355,000 LBP</span>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        function ToDetail() {
+            $("#payment-button-navigator").removeClass("active-checkout-navigator");
+            $("#details-button-navigator").addClass("active-checkout-navigator");
+            document.getElementById("details").style.display = "block";
+            document.getElementById("payment").style.display = "none";
+        }
+        function ToPayment() {
+            $("#payment-button-navigator").addClass("active-checkout-navigator");
+            $("#details-button-navigator").removeClass("active-checkout-navigator");
+            document.getElementById("payment").style.display = "block";
+            document.getElementById("details").style.display = "none";
+        }
+    </script>
+}

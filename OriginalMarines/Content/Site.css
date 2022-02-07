@@ -1,0 +1,358 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+
+a
+{
+    text-decoration:none;
+    color:black;
+}
+
+.nav-link
+{
+    color:white!important;
+    position:relative;
+    
+}
+
+.nav-item a:hover:after, .nav-item .active:after {
+    width: 100%;
+}
+
+.nav-item a:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: cadetblue;
+    transition: all .3s;
+}
+
+.carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50px;
+    margin: 11px;
+    cursor:pointer;
+   
+}
+
+.carousel-indicators .active {
+    background-color:gray;
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 38%;
+    background: linear-gradient( 0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4430147058823529) 8%, rgba(0,0,0,1) 100%) !important;
+    padding: 12px 25px;
+    text-align:center;
+    color:white;
+}
+
+.btn-help {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    background: var(--second-color);
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.btn-down {
+    position: fixed;
+    right: 1rem;
+    top: 90%;
+    background: #0E5AA7;
+    color: white;
+    font-size: 43px;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    z-index: 20000;
+    border-radius: 50%;
+    display:none;
+    cursor:pointer;
+}
+
+.cover
+{
+    object-fit:cover;
+
+}
+
+.contain-absolute {
+    position: absolute;
+    top: 50%;
+    width: 92%;
+    text-align: center;
+    background-color: white;
+    display: none;
+    transition: all 0.8s;
+}
+.position-relative a
+{
+    transition: all 0.8s;
+}
+.position-relative a:hover div
+{
+    display:block;
+    opacity:0.8;
+}
+.img-hover:hover {
+    box-shadow: 0 0 1.5rem 0.5rem #e0e0e0;
+}
+
+    .img-hover:hover img {
+        opacity: 0.8;
+        transform: scale(1.1)
+    }
+
+.img-hover img {
+    transition: transform .3s ease-out;
+}
+.img-hover {
+    overflow: hidden;
+    transition: box-shadow .3s ease-out;
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+    padding: 9px 25px;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width:100%;
+    height:auto;
+}
+.collapse li {
+    padding: 2px 0;
+    text-align: left;
+}
+.collapse li:hover {
+    background: #0E5AA7;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.collapse li small
+{
+    margin-left:10px;
+}
+
+.better-seller .title {
+    border-bottom: 1px solid black;
+    padding: 2px 0;
+}
+
+.products-card-price-with-sold {
+    text-decoration: line-through;
+    font-style: italic;
+    color: #222;
+}
+
+.card-img-top
+{
+    object-fit:cover;
+    object-position:center;
+
+}
+
+.img-front {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.card:hover .img-front {
+    display: inline;
+}
+
+video {
+    width: 50%;
+    height: auto;
+    margin: 0% 25%;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 12%);
+    margin-top:3px;
+}
+
+.item-description-price-with-sold > h4 {
+    text-decoration: line-through;
+    font-style: italic;
+    color: #222;
+    font-size: initial;
+}
+
+.qty .count {
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 0 2px;
+    min-width: 35px;
+    text-align: center;
+}
+
+.qty .plus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.qty .minus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+
+div {
+    text-align: center;
+}
+
+.minus:hover {
+    background-color: #717fe0 !important;
+}
+
+.plus:hover {
+    background-color: #717fe0 !important;
+}
+
+.btn-wishltist, .btn-cart {
+    transition: all 0.5s !important;
+}
+
+    .btn-wishltist:hover{
+        width: 150px !important;
+        background-color: #dc3545 !important;
+        color: white !important;
+    }
+
+.btn-cart:hover {
+    width: 150px !important;
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+.discount-cart-label {
+    font-style: italic;
+    color: blue;
+    font-size: small;
+}
+
+.active-checkout-navigator {
+    border-bottom: 3px solid #0E5AA7!important;
+    transition: border-bottom-color .5s;
+}
+
+.paymentType
+{
+    height:100px;
+}
+
+#details-button-navigator, #payment-button-navigator {
+    border-bottom: 3px solid gray;
+}
+
+.amount {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+#checkoutSummary div span {
+    float: right;
+}
+
+.loadscreen {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999999999;
+}
+
+.load-spinner:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px;
+    height: 375px;
+    border: 4px solid #0E5AA7;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 100%;
+    transition: all 0.5s;
+    -webkit-animation: rotate 1s ease infinite;
+    animation: rotate 1s ease infinite
+}
+
+.load-spinner img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+}
+
+.carousel-inner, .img-src {
+    height: 95vh;
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    .carousel-inner {
+        height: 50%;
+    }
+    .img-src
+    {
+        height:57vh!important;
+    }
+    .collapse .show {
+        display: none;
+    }
+    .input-group:focus
+    {
+        border-radius:0px!important;
+    }
+}
